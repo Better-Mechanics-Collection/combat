@@ -134,8 +134,8 @@ NDefines.NMilitary.PIERCING_THRESHOLD_DAMAGE_VALUES = {                         
     0.20,
 }
 
-NDefines.NMilitary.ARMOR_VS_AVERAGE = 0.25
-NDefines.NMilitary.PEN_VS_AVERAGE = 0.25
+NDefines.NMilitary.ARMOR_VS_AVERAGE = 0.4
+NDefines.NMilitary.PEN_VS_AVERAGE = 0.1
 
 NDefines.NMilitary.LAND_COMBAT_STR_ARMOR_ON_SOFT_DICE_SIZE = 3
 NDefines.NMilitary.LAND_COMBAT_ORG_ARMOR_ON_SOFT_DICE_SIZE = 5
