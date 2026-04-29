@@ -100,14 +100,11 @@ NDefines.NMilitary.BASE_FORT_PENALTY = -0.25
 --------------------------------------------------------------------------------------------------------------
 -- LAND COMBAT DAMAGE
 --------------------------------------------------------------------------------------------------------------
-NDefines.NMilitary.LAND_COMBAT_STR_DAMAGE_MODIFIER = 0.09      -- ~50% above vanilla: meaningful casualties per hit
-NDefines.NMilitary.LAND_COMBAT_ORG_DAMAGE_MODIFIER = 0.035     -- below vanilla: battles last longer before routing
 
 NDefines.NMilitary.EQUIPMENT_COMBAT_LOSS_FACTOR = 0.40         -- vanilla 0.70: men die, equipment mostly recovered from battlefield
 NDefines.NMilitary.RELIABILTY_RECOVERY = 0.55                  -- vanilla 0.40: more post-battle equipment salvage
 NDefines.NMilitary.BASE_CAPTURE_EQUIPMENT_RATIO = 0.05         -- vanilla 0.0: winners capture ~8% of enemy lost equipment
 
-NDefines.NMilitary.LAND_AIR_COMBAT_MAX_PLANES_PER_ENEMY_WIDTH = 2
 
 --------------------------------------------------------------------------------------------------------------
 -- ARMOR & PIERCING
@@ -136,9 +133,6 @@ NDefines.NMilitary.PIERCING_THRESHOLD_DAMAGE_VALUES = {                         
 
 NDefines.NMilitary.ARMOR_VS_AVERAGE = 0.4
 NDefines.NMilitary.PEN_VS_AVERAGE = 0.1
-
-NDefines.NMilitary.LAND_COMBAT_STR_ARMOR_ON_SOFT_DICE_SIZE = 3
-NDefines.NMilitary.LAND_COMBAT_ORG_ARMOR_ON_SOFT_DICE_SIZE = 5
 
 NDefines.NMilitary.LAND_COMBAT_STR_ARMOR_DEFLECTION_FACTOR = 0.6
 NDefines.NMilitary.LAND_COMBAT_ORG_ARMOR_DEFLECTION_FACTOR = 0.8
@@ -172,9 +166,6 @@ NDefines.NAir.ANTI_AIR_PLANE_DAMAGE_FACTOR = 0.35
 NDefines.NAir.ANTI_AIR_ATTACK_TO_DAMAGE_REDUCTION_FACTOR = 0.31
 
 NDefines.NAir.CAS_NIGHT_ATTACK_FACTOR = 0.25
-
-NDefines.NMilitary.LAND_AIR_COMBAT_STR_DAMAGE_MODIFIER = 0.04
-NDefines.NMilitary.LAND_AIR_COMBAT_ORG_DAMAGE_MODIFIER = 0.05
 
 NDefines.NAir.FIELD_EXPERIENCE_MAX_PER_DAY = 1.75
 
@@ -260,15 +251,15 @@ NDefines.NTrade.BASE_LAND_TRADE_RANGE = 200
 --------------------------------------------------------------------------------------------------------------
 -- Slower Battle Lower Attrition Weaker CAS Test Defines
 --------------------------------------------------------------------------------------------------------------
---NDefines.NMilitary.LAND_COMBAT_STR_DAMAGE_MODIFIER = 0.05 --0.06
---NDefines.NMilitary.LAND_COMBAT_ORG_DAMAGE_MODIFIER = 0.05 --0.053
---NDefines.NMilitary.LAND_AIR_COMBAT_STR_DAMAGE_MODIFIER = 0.05 -- 0.05
---NDefines.NMilitary.LAND_AIR_COMBAT_ORG_DAMAGE_MODIFIER = 0.05 -- 0.10
---NDefines.NMilitary.LAND_AIR_COMBAT_MAX_PLANES_PER_ENEMY_WIDTH = 1 -- 3
---NDefines.NMilitary.LAND_COMBAT_ORG_DICE_SIZE = 3 -- 4
---NDefines.NMilitary.LAND_COMBAT_STR_DICE_SIZE = 1 -- 2
---NDefines.NMilitary.LAND_COMBAT_ORG_ARMOR_ON_SOFT_DICE_SIZE = 4 -- 6
---NDefines.NMilitary.LAND_COMBAT_STR_ARMOR_ON_SOFT_DICE_SIZE = 2 -- 2
+NDefines.NMilitary.LAND_COMBAT_STR_DAMAGE_MODIFIER = 0.05 --0.06
+NDefines.NMilitary.LAND_COMBAT_ORG_DAMAGE_MODIFIER = 0.05 --0.053
+NDefines.NMilitary.LAND_AIR_COMBAT_STR_DAMAGE_MODIFIER = 0.05 -- 0.05
+NDefines.NMilitary.LAND_AIR_COMBAT_ORG_DAMAGE_MODIFIER = 0.05 -- 0.10
+NDefines.NMilitary.LAND_AIR_COMBAT_MAX_PLANES_PER_ENEMY_WIDTH = 1 -- 3
+NDefines.NMilitary.LAND_COMBAT_ORG_DICE_SIZE = 2 -- 4
+NDefines.NMilitary.LAND_COMBAT_STR_DICE_SIZE = 1 -- 2
+NDefines.NMilitary.LAND_COMBAT_ORG_ARMOR_ON_SOFT_DICE_SIZE = 4 -- 6
+NDefines.NMilitary.LAND_COMBAT_STR_ARMOR_ON_SOFT_DICE_SIZE = 2 -- 2
 NDefines.NMilitary.ATTRITION_EQUIPMENT_LOSS_CHANCE = 0.003 -- 0.005
 NDefines.NSupply.TRUCK_ATTRITION = 0.002 -- 0.003
 
