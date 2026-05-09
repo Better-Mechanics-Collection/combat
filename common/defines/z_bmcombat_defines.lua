@@ -8,23 +8,8 @@ NDefines.NCountry.BASE_COMMAND_POWER_GAIN = 0.51
 NDefines.NCountry.SPECIAL_FORCES_CAP_MIN = 36
 NDefines.NCountry.SPECIAL_FORCES_CAP_BASE = 0.034
 
--- War Support Impacts
---NDefines.NCountry.MAX_BOMBING_WAR_SUPPORT_IMPACT = -0.75
---NDefines.NCountry.MAX_HEROES_BEING_KILLED_WAR_SUPPORT_IMPACT = -0.65
---NDefines.NCountry.MAX_CONVOYS_BEING_RAIDED_WAR_SUPPORT_IMPACT = -0.55
-
-NDefines.NCountry.HEROES_BEING_KILLED_WAR_SUPPORT_PENALTY_SCALE = -0.06
-NDefines.NCountry.WAR_SUPPORT_FROM_CASUALTIES = 0.050
-NDefines.NCountry.MAX_HEROES_BEING_KILLED_WEEKLY_WAR_SUPPORT_PENALTY = -0.010
-
-NDefines.NCountry.BOMBING_WAR_SUPPORT_PENALTY_SCALE = -0.00030
-NDefines.NCountry.MAX_BOMBING_WEEKLY_WAR_SUPPORT_PENALTY = 	-0.010
-
-NDefines.NCountry.CONVOYS_BEING_RAIDED_WAR_SUPPORT_PENALTY_SCALE = -0.10
-NDefines.NCountry.MAX_CONVOYS_BEING_RAIDED_WEEKLY_WAR_SUPPORT_PENALTY = -0.010
-
 -- Supply & Logistics
-NDefines.NCountry.AIR_SUPPLY_CONVERSION_SCALE = 0.05
+NDefines.NCountry.AIR_SUPPLY_CONVERSION_SCALE = 0.075
 
 -- Command Power
 NDefines.NCountry.BASE_MAX_COMMAND_POWER = 105
@@ -61,9 +46,9 @@ NDefines.NMilitary.UNIT_EXPERIENCE_PER_TRAINING_DAY = 0.00175
 NDefines.NMilitary.TRAINING_ATTRITION = 0.01
 NDefines.NMilitary.TRAINING_MIN_STRENGTH = 0.2
 
-NDefines.NMilitary.FIELD_EXPERIENCE_SCALE = 0.003
-NDefines.NMilitary.FIELD_EXPERIENCE_MAX_PER_DAY = 4
-NDefines.NMilitary.TRAINING_EXPERIENCE_SCALE = 124.0
+--NDefines.NMilitary.FIELD_EXPERIENCE_SCALE = 0.003
+--NDefines.NMilitary.FIELD_EXPERIENCE_MAX_PER_DAY = 4
+--NDefines.NMilitary.TRAINING_EXPERIENCE_SCALE = 124.0
 
 -- Dig-in
 NDefines.NMilitary.DIG_IN_FACTOR = 0.01
@@ -74,7 +59,8 @@ NDefines.NMilitary.UNIT_DIGIN_SPEED = 1.5
 -- LAND COMBAT (CORE)
 --------------------------------------------------------------------------------------------------------------
 NDefines.NMilitary.RECON_SKILL_IMPACT = 10
-NDefines.NMilitary.DAMAGE_SPLIT_ON_FIRST_TARGET = 0.5
+NDefines.NMilitary.DAMAGE_SPLIT_ON_FIRST_TARGET = 0.7
+NDefines.NMilitary.ENGAGEMENT_WIDTH_PER_WIDTH = 1.5	-- (was 2.0) -- how much enemy combat width we are allowed to engage per width of our own		#WICHTIG
 
 NDefines.NMilitary.COMBAT_STACKING_START = 10
 NDefines.NMilitary.COMBAT_STACKING_EXTRA = 6
@@ -96,6 +82,9 @@ NDefines.NMilitary.RIVER_CROSSING_PENALTY_LARGE = -0.7
 NDefines.NMilitary.RIVER_CROSSING_SPEED_PENALTY = -0.30
 NDefines.NMilitary.RIVER_CROSSING_SPEED_PENALTY_LARGE = -0.65
 NDefines.NMilitary.BASE_FORT_PENALTY = -0.25
+
+NDefines.NMilitary.COMBAT_OVER_WIDTH_PENALTY = -0.6		-- over combat width penalty per %.
+NDefines.NMilitary.COMBAT_OVER_WIDTH_PENALTY_MAX = -0.50	-- over combat width max (when you cant join no more).
 
 --------------------------------------------------------------------------------------------------------------
 -- LAND COMBAT DAMAGE
@@ -156,7 +145,7 @@ NDefines.NAir.AIR_WING_MAX_STATS_ATTACK = 200
 NDefines.NAir.AIR_WING_MAX_STATS_DEFENCE = 200
 NDefines.NAir.AIR_WING_MAX_STATS_AGILITY = 200
 NDefines.NAir.AIR_WING_MAX_STATS_SPEED = 2000
-NDefines.NAir.AIR_WING_MAX_STATS_BOMBING = 200
+NDefines.NAir.AIR_WING_MAX_STATS_BOMBING = 300
 
 NDefines.NAir.BIGGEST_AGILITY_FACTOR_DIFF = 5.0
 NDefines.NAir.AIR_WING_COUNTRY_XP_FROM_TRAINING_FACTOR = 0.0075
@@ -183,65 +172,8 @@ NDefines.NAir.BASE_STRATEGIC_BOMBING_HIT_SHIP_DAMAGE_FACTOR = 50
 NDefines.NAir.BASE_STRATEGIC_BOMBING_HIT_PLANE_CHANCE = 0.65
 NDefines.NAir.BASE_STRATEGIC_BOMBING_HIT_PLANE_DAMAGE_FACTOR = 50
 
-NDefines.NAir.AA_INDUSTRY_AIR_DAMAGE_FACTOR = -0.036
+NDefines.NAir.AA_INDUSTRY_AIR_DAMAGE_FACTOR = -0.045
 NDefines.NAir.DETECT_CHANCE_FROM_NIGHT = -0.35
-
---------------------------------------------------------------------------------------------------------------
--- NAVAL COMBAT
---------------------------------------------------------------------------------------------------------------
-NDefines.NNavy.RELATIVE_SURFACE_DETECTION_TO_POSITIONING_FACTOR = 0.02
-NDefines.NNavy.MAX_POSITIONING_BONUS_FROM_SURFACE_DETECTION = 0.2
-NDefines.NNavy.MAX_POSITIONING_PENALTY_FROM_HIGHER_SHIP_RATIO = 0.8
-NDefines.NNavy.HIGHER_SHIP_RATIO_POSITIONING_PENALTY_FACTOR = 0.4
-
-NDefines.NNavy.DAMAGE_PENALTY_ON_MINIMUM_POSITIONING = 0.75
-NDefines.NNavy.SCREENING_EFFICIENCY_PENALTY_ON_MINIMUM_POSITIONING = 0.5
-NDefines.NNavy.AA_EFFICIENCY_PENALTY_ON_MINIMUM_POSITIONING = 0.6
-
-NDefines.NNavy.BASE_JOIN_COMBAT_HOURS = 12
-NDefines.NNavy.FIELD_EXPERIENCE_MAX_PER_DAY = 50
-
-NDefines.NNavy.COMBAT_BASE_HIT_CHANCE = 0.05
-NDefines.NNavy.COMBAT_MIN_HIT_CHANCE = 0.03
-NDefines.NNavy.COMBAT_EVASION_TO_HIT_CHANCE = 0.025
-NDefines.NNavy.COMBAT_EVASION_TO_HIT_CHANCE_TORPEDO_MULT = 50.0
-
-NDefines.NNavy.COMBAT_TORPEDO_CRITICAL_DAMAGE_MULT = 2.25
-NDefines.NNavy.COMBAT_DAMAGE_TO_STR_FACTOR = 0.65
-NDefines.NNavy.COMBAT_CHASE_RESIGNATION_HOURS = 10
-NDefines.NNavy.COMBAT_MAX_GROUPS = 2
-
-NDefines.NNavy.NAVAL_SUPREMACY_CAN_INVADE = 0.55
-
---------------------------------------------------------------------------------------------------------------
--- SUBMARINES
---------------------------------------------------------------------------------------------------------------
-NDefines.NNavy.SUBMARINE_HIDE_TIMEOUT = 24
-NDefines.NNavy.SUBMARINE_REVEALED_TIMEOUT = 24
-NDefines.NNavy.SUBMARINE_REVEAL_POW = 3.0
-NDefines.NNavy.SUBMARINE_BASE_TORPEDO_REVEAL_CHANCE = 0.035
-NDefines.NNavy.SUBMARINE_REVEAL_BASE_CHANCE = 11
-
-NDefines.NNavy.SUB_DETECTION_CHANCE_BASE_SPOTTING_EFFECT = 1.0
-NDefines.NNavy.SUB_DETECTION_CHANCE_SPOTTING_SPEED_EFFECT = 4.0
-NDefines.NNavy.SUB_DETECTION_CHANCE_BASE_SPOTTING_POW_EFFECT = 3.0
-
---------------------------------------------------------------------------------------------------------------
--- CARRIERS & NAVAL AIR
---------------------------------------------------------------------------------------------------------------
-NDefines.NAir.COMBAT_DAMAGE_SCALE_CARRIER = 3.3
-NDefines.NAir.NAVAL_STRIKE_CARRIER_MULTIPLIER = 3.3
-
-NDefines.NNavy.CARRIER_STACK_PENALTY = 10
-NDefines.NNavy.CARRIER_STACK_PENALTY_EFFECT = 0.08
-NDefines.NAI.CARRIER_TASKFORCE_MAX_CARRIER_COUNT = 10
-
---------------------------------------------------------------------------------------------------------------
--- SHORE BOMBARDMENT
---------------------------------------------------------------------------------------------------------------
-NDefines.NNavy.SHORE_BOMBARDMENT_CAP = 0.35
-NDefines.NNavy.HEAVY_GUN_ATTACK_TO_SHORE_BOMBARDMENT = 0.1
-NDefines.NNavy.LIGHT_GUN_ATTACK_TO_SHORE_BOMBARDMENT = 0.05
 
 --------------------------------------------------------------------------------------------------------------
 -- TRADE
@@ -249,38 +181,48 @@ NDefines.NNavy.LIGHT_GUN_ATTACK_TO_SHORE_BOMBARDMENT = 0.05
 NDefines.NTrade.BASE_LAND_TRADE_RANGE = 200
 
 --------------------------------------------------------------------------------------------------------------
--- Slower Battle Lower Attrition Weaker CAS Test Defines
---------------------------------------------------------------------------------------------------------------
-NDefines.NMilitary.LAND_COMBAT_STR_DAMAGE_MODIFIER = 0.05 --0.06
-NDefines.NMilitary.LAND_COMBAT_ORG_DAMAGE_MODIFIER = 0.05 --0.053
-NDefines.NMilitary.LAND_AIR_COMBAT_STR_DAMAGE_MODIFIER = 0.05 -- 0.05
-NDefines.NMilitary.LAND_AIR_COMBAT_ORG_DAMAGE_MODIFIER = 0.05 -- 0.10
-NDefines.NMilitary.LAND_AIR_COMBAT_MAX_PLANES_PER_ENEMY_WIDTH = 1 -- 3
-NDefines.NMilitary.LAND_COMBAT_ORG_DICE_SIZE = 2 -- 4
-NDefines.NMilitary.LAND_COMBAT_STR_DICE_SIZE = 1 -- 2
-NDefines.NMilitary.LAND_COMBAT_ORG_ARMOR_ON_SOFT_DICE_SIZE = 4 -- 6
-NDefines.NMilitary.LAND_COMBAT_STR_ARMOR_ON_SOFT_DICE_SIZE = 2 -- 2
-NDefines.NMilitary.ATTRITION_EQUIPMENT_LOSS_CHANCE = 0.003 -- 0.005
-NDefines.NSupply.TRUCK_ATTRITION = 0.002 -- 0.003
-
---------------------------------------------------------------------------------------------------------------
--- Total Mobilization Test Defines
+-- Combat: Slower Battles, Dynamic, Historical Casualties
+-- Goal: Longer engagements without WW1 stalemate. Divisions bleed before they break.
 --------------------------------------------------------------------------------------------------------------
 
---- Naval Combat & Fleets (NDefines.NNavy)
-NDefines.NNavy.COMBAT_RETREAT_DECISION_CHANCE = 0.05 							-- There is also random factor in deciding if we should retreat or not. That causes a delay in taking decision, that sooner or later will be picked. It's needed so damaged fast ships won't troll the combat.
-NDefines.NNavy.AGGRESION_MULTIPLIER_FOR_COMBAT = 12
-NDefines.NNavy.AGGRESSION_MIN_ARMOR_EFFICIENCY =  1
-NDefines.NNavy.AGGRESSION_HEAVY_GUN_EFFICIENCY_ON_LIGHT_SHIPS = 1
-NDefines.NNavy.AGGRESSION_TORPEDO_EFFICIENCY_ON_LIGHT_SHIPS = 1
-NDefines.NNavy.AGGRESSION_LIGHT_GUN_EFFICIENCY_ON_HEAVY_SHIPS = 1
-NDefines.NNavy.AGGRESSION_HEAVY_GUN_EFFICIENCY_ON_HEAVY_SHIPS = 2.0 -- ratio for scoring for different gun types against heavy ships
-NDefines.NNavy.AGGRESSION_TORPEDO_EFFICIENCY_ON_HEAVY_SHIPS = 2.1   -- ratio for scoring for different gun types against heavy ships
-NDefines.NNavy.COMBAT_MIN_DURATION = 24	
-NDefines.NNavy.AGGRESSION_SETTINGS_VALUES = { -- ships will use this values while deciding to attack enemies
-		0,
-		1.8,	
-		2.4,	
-		3.2,	
-		10000,	
-	}
+-- Base damage modifiers: slightly reduced from vanilla to stretch battles out
+NDefines.NMilitary.LAND_COMBAT_STR_DAMAGE_MODIFIER = 0.057  -- vanilla 0.060
+NDefines.NMilitary.LAND_COMBAT_ORG_DAMAGE_MODIFIER = 0.048  -- vanilla 0.053
+
+-- Dice sizes: tighter ORG variance keeps battles from spiking to instant collapses,
+-- STR kept at vanilla so decisive fights still end decisively
+NDefines.NMilitary.LAND_COMBAT_ORG_DICE_SIZE = 3            -- vanilla 4
+NDefines.NMilitary.LAND_COMBAT_STR_DICE_SIZE = 2            -- vanilla 2, DO NOT lower this
+
+-- Armor bonus dice: slight reduction so armor advantage is real but not a one-tick steamroll
+NDefines.NMilitary.LAND_COMBAT_ORG_ARMOR_ON_SOFT_DICE_SIZE = 5  -- vanilla 6
+NDefines.NMilitary.LAND_COMBAT_STR_ARMOR_ON_SOFT_DICE_SIZE = 2  -- vanilla 2, keep it
+
+-- Hit avoidance: lower ceiling means breaking divisions eat more STR before retreating
+-- this is what gives you historical casualty spikes on collapsing units
+NDefines.NMilitary.BASE_CHANCE_TO_AVOID_HIT = 87            -- vanilla 90
+NDefines.NMilitary.CHANCE_TO_AVOID_HIT_AT_NO_DEF = 55       -- vanilla 60
+
+-- CAS: meaningful but not battle-deciding on its own
+NDefines.NMilitary.LAND_AIR_COMBAT_STR_DAMAGE_MODIFIER = 0.04   -- vanilla 0.05
+NDefines.NMilitary.LAND_AIR_COMBAT_ORG_DAMAGE_MODIFIER = 0.07   -- vanilla 0.10
+NDefines.NMilitary.LAND_AIR_COMBAT_MAX_PLANES_PER_ENEMY_WIDTH = 2  -- vanilla 3
+
+-- Attrition: lighter on equipment, doesn't affect battle pacing but helps campaign sustainability
+NDefines.NMilitary.ATTRITION_EQUIPMENT_LOSS_CHANCE = 0.003  -- vanilla 0.005
+NDefines.NSupply.TRUCK_ATTRITION = 0.002 
+                   -- vanilla 0.003
+
+	
+NDefines.NAir.AIR_WING_MAX_STATS_DEFENCE = 200
+NDefines.NAir.AIR_WING_MAX_STATS_AGILITY = 200
+NDefines.NAir.AIR_WING_MAX_STATS_SPEED = 950
+NDefines.NAir.AIR_WING_MAX_STATS_BOMBING = 300
+NDefines.NAir.BIGGEST_SPEED_FACTOR_DIFF = 5.0
+NDefines.NAir.COMBAT_BETTER_AGILITY_DAMAGE_REDUCTION = 0.65
+
+NDefines.NAir.BOMBING_DAMAGE_EXPERIENCE_SCALE = 0.0002
+NDefines.NAir.WAR_SCORE_STRATEGIC_BOMBING_FACTOR = 0.1
+--NDefines.NAir.AIR_WING_XP_AIR_VS_AIR_COMBAT_GAIN = 1.5
+--NDefines.NAir.AIR_WING_XP_GROUND_MISSION_COMPLETED_GAIN = 1.2
+--NDefines.NAir.AIR_WING_XP_RECON_MISSION_COMPLETED_GAIN = 0.09
