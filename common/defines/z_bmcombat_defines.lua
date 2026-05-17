@@ -51,8 +51,8 @@ NDefines.NMilitary.TRAINING_MIN_STRENGTH = 0.2
 --NDefines.NMilitary.TRAINING_EXPERIENCE_SCALE = 124.0
 
 -- Dig-in
-NDefines.NMilitary.DIG_IN_FACTOR = 0.01
-NDefines.NMilitary.UNIT_DIGIN_CAP = 8
+NDefines.NMilitary.DIG_IN_FACTOR = 0.02
+NDefines.NMilitary.UNIT_DIGIN_CAP = 7.5
 NDefines.NMilitary.UNIT_DIGIN_SPEED = 1.5
 
 --------------------------------------------------------------------------------------------------------------
